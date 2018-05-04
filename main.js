@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
     const button = document.getElementById('thebutton');
-    button.addEventListener('click', renderWords)
+    button.addEventListener('click', renderWords);
 });
 
 function renderWords() {
-    console.log('rendering')
-    const input = document.getElementById('thewords')
-    const words = input.value
-    console.log(words)
+    console.log('rendering');
+    const input = document.getElementById('thewords');
+    const words = input.value;
+    console.log(words);
 
-    const canvas = drawText(words)
+    const canvas = drawText(words);
     const imgData = saveToImage(canvas);
     const pdfDataURI = saveToPDF(imgData);
-
-    var iframe = document.createElement('iframe')
-    iframe.width = '100%'
-    iframe.height = '100%'
-    iframe.src = pdfDataURI
-    document.body.append(iframe)
+    var iframe = document.createElement('iframe');
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.src = pdfDataURI;
+    document.body.append(iframe);
+    console.log('done');
 }
 
 function drawText(text) {
@@ -38,5 +38,5 @@ function saveToImage(canvas) {
 function saveToPDF(imgData) {
     const doc = new jsPDF();
     doc.addImage(imgData, 'PNG', 0, 0, 300,100 );
-    return doc.output('datauri');
+    return doc.output('datauristring');
 }
