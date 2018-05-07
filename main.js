@@ -44,8 +44,8 @@ function saveToPDF(imgData) {
     const doc = new jsPDF();
 
     doc.addImage(imgData, 'PNG', 0, 100, 300,100 );
-    for (var i = 0; i < 30; i++){
-        doc.addPage(); 
+    for (var i = 0; i < 29; i++){
+        doc.addPage();
         doc.addImage(imgData, 'PNG', 0, 100, 300,100 );
     }
 
