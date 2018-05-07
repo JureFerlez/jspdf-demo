@@ -13,8 +13,9 @@ function renderWords() {
     const imgData = saveToImage(canvas);
     const pdfDataURI = saveToPDF(imgData);
     var iframe = document.createElement('iframe');
-    iframe.width = '100%';
-    iframe.height = '100%';
+
+    iframe.width = '300px';
+    iframe.height = '500px';
     iframe.src = pdfDataURI;
     document.body.append(iframe);
     console.log('done');
