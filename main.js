@@ -42,6 +42,8 @@ function saveToImage(canvas) {
 
 function saveToPDF(imgData) {
     const doc = new jsPDF();
-    doc.addImage(imgData, 'PNG', 0, 0, 300,100 );
+
+    doc.addImage(imgData, 'PNG', 0, 100, 300,100 );
+
     return doc.output('datauristring');
 }
