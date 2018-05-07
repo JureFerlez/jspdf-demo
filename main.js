@@ -25,7 +25,11 @@ function drawText(text) {
     const canvas = document.createElement('canvas');
     canvas.width = 300;
     canvas.height = 100;
+
     const ctx = canvas.getContext('2d');
+    ctx.fillStyle="#FFFFFF";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="#000000";
     ctx.font = '48px serif';
     ctx.fillText(text, 10, 50);
 
